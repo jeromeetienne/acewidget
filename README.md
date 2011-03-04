@@ -23,11 +23,21 @@ The api is done via the usual
         }
     }
 
+### SetMode
 `SetMode`: To change current mode to javascript
     {
         type    : "setMode",
         data    : {
-            theme   : "javascript"
+            mode    : "javascript"
+        }
+    }
+
+### SetValue
+`SetValue`: To change current text content
+    {
+        type    : "setValue",
+        data    : {
+            text    : "supernewtext"
         }
     }
 
