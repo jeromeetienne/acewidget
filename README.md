@@ -56,7 +56,7 @@ The api is done via the usual
     {
         type    : "setTabSize",
         data    : {
-            line    : 8
+            size    : 8
         }
     }
 

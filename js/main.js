@@ -31,8 +31,7 @@ var AceEditor	= function(){
 }
 
 AceEditor.prototype.onSetTheme	= function(data){
-	var theme	= data.theme;
-	this.editor.setTheme("ace/theme/"+theme);
+	this.editor.setTheme("ace/theme/"+data.theme);
 }
 
 AceEditor.prototype.onSetMode	= function(data){
@@ -41,8 +40,7 @@ AceEditor.prototype.onSetMode	= function(data){
 }
 
 AceEditor.prototype.onSetValue	= function(data){
-	var text	= data.text;
-	this.editor.getSession().getDocument().setValue(text);
+	this.editor.getSession().getDocument().setValue(data.text);
 }
 
 AceEditor.prototype.onGotoLine	= function(data){
@@ -50,8 +48,7 @@ AceEditor.prototype.onGotoLine	= function(data){
 }
 
 AceEditor.prototype.onSetTabSize	= function(data){
-	var arg	= parseInt(data.text);
-	this.editor.getSession().setTabSize(arg);
+	this.editor.getSession().setTabSize(data.size);
 }
 
 
