@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<iframe id="editor" src="index.html?mode=javascript&theme=twilight" width="600px" height="400px"></iframe>
+	
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'></script>
+	<script>
+		var editorSend	= function(event){
+			jQuery('iframe').get(0).contentWindow.postMessage(JSON.stringify(event), "*");			
+		}
+		jQuery(function(){
+			editorSend({
+				type	: "loadText",
+				data	: {
+					text: "not yet implemented"
+				}
+			});
+		})
+	</script>
+</body>
+</html>
