@@ -24,6 +24,8 @@ var AceEditor	= function(){
 		var methodName	= "on" + eventType.substr(0,1).toUpperCase() + eventType.substr(1);
 		if( methodName in this ){
 			this[methodName](eventData);
+		}else{
+			console.log("event ", eventType, "is unknown")
 		}
 	}.bind(this), false);	
 }

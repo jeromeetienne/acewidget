@@ -22,6 +22,14 @@ The api is done via the usual
         }
     }
 
+`SetMode`: To change current mode to javascript
+    {
+        type    : "setMode",
+        data    : {
+            theme   : "javascript"
+        }
+    }
+
 ## vision
 
 * be super simple to install (no server)
