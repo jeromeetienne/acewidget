@@ -13,9 +13,10 @@ AceWidget is a widget iframe which make including ace in your page simple.
 The api is done via the usual
 [window.postMessage()](https://developer.mozilla.org/en/DOM/window.postMessage).
 
+## Event to the widget
 
-### SetTheme
-`SetTheme`: To change current theme to twilight
+### setTheme
+`setTheme`: To change current theme to twilight
     {
         type    : "setTheme",
         data    : {
@@ -23,8 +24,8 @@ The api is done via the usual
         }
     }
 
-### SetMode
-`SetMode`: To change current mode to javascript
+### setMode
+`setMode`: To change current mode to javascript
     {
         type    : "setMode",
         data    : {
@@ -32,12 +33,30 @@ The api is done via the usual
         }
     }
 
-### SetValue
-`SetValue`: To change current text content
+### setValue
+`setValue`: To change current text content
     {
         type    : "setValue",
         data    : {
             text    : "supernewtext"
+        }
+    }
+
+### gotoLine
+`gotoLine`: To change the current line to 42
+    {
+        type    : "setValue",
+        data    : {
+            line    : 42
+        }
+    }
+
+### setTabSize
+`setTabSize`: To change the current tabsize to 8
+    {
+        type    : "setTabSize",
+        data    : {
+            line    : 8
         }
     }
 

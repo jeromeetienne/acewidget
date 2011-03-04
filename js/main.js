@@ -45,18 +45,18 @@ AceEditor.prototype.onSetValue	= function(data){
 	this.editor.getSession().getDocument().setValue(text);
 }
 
-AceEditor.prototype.onGetValue	= function(data){
-	this.editor.getSession().getDocument().getValue();
-}
-
 AceEditor.prototype.onGotoLine	= function(data){
-	var arg	= parseInt(data.text);
-	this.editor.gotoLine(arg);
+	this.editor.gotoLine(data.line);
 }
 
 AceEditor.prototype.onSetTabSize	= function(data){
 	var arg	= parseInt(data.text);
 	this.editor.getSession().setTabSize(arg);
+}
+
+
+AceEditor.prototype.onGetValue	= function(data){
+	return this.editor.getSession().getDocument().getValue();
 }
 
 var main	= function(){
