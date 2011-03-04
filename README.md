@@ -13,7 +13,9 @@ AceWidget is a widget iframe which make including ace in your page simple.
 The api is done via the usual
 [window.postMessage()](https://developer.mozilla.org/en/DOM/window.postMessage).
 
-## Event to the widget
+## Events sent to the widget
+
+Try to be [jsend compatible](http://labs.omniti.com/labs/jsend/wiki)
 
 ### setTheme
 `setTheme`: To change current theme to twilight
