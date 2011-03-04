@@ -14,6 +14,7 @@ The api is done via the usual
 [window.postMessage()](https://developer.mozilla.org/en/DOM/window.postMessage).
 
 
+### SetTheme
 `SetTheme`: To change current theme to twilight
     {
         type    : "setTheme",
