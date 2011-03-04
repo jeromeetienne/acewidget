@@ -2,11 +2,11 @@
 
 AceWidget is a widget iframe which make including ace in your page simple.
 
-   <iframe src="http://acewidget.org"></iframe>
+    <iframe src="http://acewidget.org"></iframe>
    
-   http://jeromeetienne.github.com/acewidget/?theme=twilight&mode=javascript
-   
-   http://jeromeetienne.github.com/acewidget
+    http://jeromeetienne.github.com/acewidget/?theme=twilight&mode=javascript
+    
+    http://jeromeetienne.github.com/acewidget
    
 ## API
 
