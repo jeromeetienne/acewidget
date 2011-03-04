@@ -19,7 +19,7 @@ var AceEditor	= function(){
 		var eventFull	= JSON.parse(event.data);
 		var eventType	= eventFull.type;
 		var eventData	= eventFull.data;
-		//console.log("eventFull", eventFull);
+		console.log("eventFull", eventFull);
 		//console.log("window message", event.data, event.origin);
 		var methodName	= "on" + eventType.substr(0,1).toUpperCase() + eventType.substr(1);
 		if( methodName in this ){
@@ -28,16 +28,28 @@ var AceEditor	= function(){
 	}.bind(this), false);	
 }
 
-AceEditor.prototype.onPutText	= function(data){
+AceEditor.prototype.onSetTheme	= function(data){
+	var theme	= data.theme;
+	this.editor.setTheme("ace/theme/"+theme);
+}
+
+AceEditor.prototype.onSetMode	= function(data){
+	var mode	= data.mode;
+	this.editor.getSession().setMode(new (require("ace/mode/"+mode).Mode)());
+}
+
+AceEditor.prototype.onSetValue	= function(data){
 	var text	= data.text;
 	this.editor.getSession().getDocument().setValue(text);
-	//this.editor.getSession().setTabSize(8);
+}
+
+AceEditor.prototype.onGetValue	= function(data){
+	this.editor.getSession().getDocument().getValue();
 }
 
 AceEditor.prototype.onGotoLine	= function(data){
 	var arg	= parseInt(data.text);
 	this.editor.gotoLine(arg);
-	//this.editor.getSession().setTabSize(8);
 }
 
 AceEditor.prototype.onSetTabSize	= function(data){
