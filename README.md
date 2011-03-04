@@ -15,10 +15,10 @@ The api is done via the usual
 
     
     {
-        type	: "setTheme",
-	data	: {
-		theme	: "twilight"
-	}
+        type    : "setTheme",
+        data    : {
+            theme   : "twilight"
+        }
     }
 
 ## vision
