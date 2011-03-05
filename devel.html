@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+	<h2>playtoy during dev for <a href="index.html">acewidget</a></h2> 
+	<iframe id="editor" src="iframe.html?mode=javascript&theme=twilight" width="600px" height="400px"></iframe>
+	<script>
+		var editorSend	= function(event){
+			var iframeWin	= document.getElementById("editor").contentWindow;
+			iframeWin.postMessage(JSON.stringify(event), "*");			
+		}
+
+		window.addEventListener("message", function(event){
+			console.log("event.data", event.data);
+		});
+		window.onload	= function(){
+			editorSend({
+				type	: "setValue",
+				data	: {
+					text: "not yet implemented"
+				}
+			});
+			editorSend({
+				type	: "setTabSize",
+				data	: {
+					size: 8
+				}
+			});
+			editorSend({
+				type	: "setValue",
+				data	: {
+					text: "not yet implemented"
+				}
+			});
+			editorSend({
+				type	: "getValue",
+				userdata: "wow"
+			});
+		};
+	</script>	
+</body>
+</html>
