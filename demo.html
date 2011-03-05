@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+	<style>
+		iframe	{
+			float	: right;
+			margin-right	: 10%;
+		}
+		code {
+			font-weight	: bold;
+		}
+	</style>
+	<h1>Demo page</h1>
+	this is a demo page for <a href="https://github.com/jeromeetienne/acewidget">acewidget</a>, a widget which make ace trivial to embed in your pages.
+	
+	<iframe id="editor" src="index.html?mode=javascript&theme=twilight" width="600px" height="400px"></iframe>	
+	<script>
+		var editorCall	= function(event){
+			var iframeWin	= document.getElementById("editor").contentWindow;
+			console.log("")
+			iframeWin.postMessage(JSON.stringify(event), "*");			
+		}
+		window.addEventListener("message", function(event){
+			console.log("event.data", event.data);	
+		});
+		
+		var doSetTabSize	= function(){
+			editorCall({
+				type	: "setTabSize",
+				data	: {
+					size: 8
+				}
+			});			
+		}
+		var doSetValue	= function(){
+			editorCall({
+				type	: "setValue",
+				data	: {
+					text: "dummy text"
+				}
+			});
+		}
+		var doGetValue	= function(){
+			editorCall({
+				type	: "getValue",
+				userdata: "foobar"
+			});
+		}
+		window.onload	= function(){
+			//doSetValue();
+			//doSetTabSize();
+			//doGetValue();
+		}
+	</script>
+	
+	<ul>
+		<li>
+			use <code>setValue</code> to change the test content.
+			<input type="button" value="test" onClick="doSetValue();"/>
+		</li>
+		<li>
+			use <code>setTabSize</code> to set it to 8.
+			<input type="button" value="test" onClick="doSetTabSize();"/>
+		</li>
+		<li>
+			use <code>getValue</code> to get current text content
+			<input type="button" value="test" onClick="doGetValue();"/>
+		</li>
+	</ul>
+	<br/>
+</body>
+</html>
