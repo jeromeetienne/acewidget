@@ -2,7 +2,7 @@
 
 AceWidget is a widget iframe which make including ace in your page simple.
 
-    <iframe src="http://acewidget.org"></iframe>
+    <iframe srchttp://jeromeetienne.github.com/acewidget/"></iframe>
    
     http://jeromeetienne.github.com/acewidget/?theme=twilight&mode=javascript
     
@@ -53,11 +53,8 @@ include it in its reply. The field name is 'userdata'
 ### getValue
 `getValue`: get the current text content
     {
-        type    : "setValue",
-        userdata: "foobar",
-        data    : {
-            text    : "supernewtext"
-        }
+        type    : "getValue",
+        userdata: "foobar"
     }
     
 It will returns

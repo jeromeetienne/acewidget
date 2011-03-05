@@ -20,7 +20,7 @@ var AceEditor	= function(){
 		var eventType	= eventFull.type;
 		var eventData	= eventFull.data;
 		var userdata	= eventFull.userdata;
-		console.log("eventFull", eventFull);
+		//console.log("eventFull", eventFull);
 		//console.log("window message", event.data, event.origin);
 		var methodName	= "on" + eventType.substr(0,1).toUpperCase() + eventType.substr(1);
 		if( methodName in this ){

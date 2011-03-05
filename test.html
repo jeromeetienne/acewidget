@@ -3,7 +3,6 @@
 <head></head>
 <body>
 	<iframe id="editor" src="index.html?mode=javascript&theme=twilight" width="600px" height="400px"></iframe>
-	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'></script>
 	<script>
 		var editorSend	= function(event){
 			var iframeWin	= document.getElementById("editor").contentWindow;
@@ -13,7 +12,7 @@
 		window.addEventListener("message", function(event){
 			console.log("event.data", event.data);
 		});
-		jQuery(function(){
+		window.onload	= function(){
 			editorSend({
 				type	: "setValue",
 				data	: {
@@ -33,10 +32,10 @@
 				}
 			});
 			editorSend({
-				type	: "getValue"
+				type	: "getValue",
 				userdata: "wow"
 			});
-		})
+		};
 	</script>	
 </body>
 </html>
