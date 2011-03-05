@@ -1,11 +1,19 @@
 #!/usr/bin/make
 # little make file to 
 
+all:
+
+
+build: index_html_build
+
+index_html_build:
+	pandoc -s -S -c pandoc.css  README.md -o index.html
+
 #################################################################################
 #		deploy								#
 #################################################################################
 
-deploy:	deployGhPage;
+deploy:	build deployGhPage
 
 deployGhPage:
 	rm -rf /tmp/acewidgetGhPages

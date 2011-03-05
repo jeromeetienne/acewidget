@@ -1,7 +1,6 @@
 # ace widget
 
 AceWidget is a widget which aims to make ace trivial to embed in your page.
-
 The Vision is to be super simple to embed and have no server to setup.
 It provide the whole official [embeded api](https://github.com/ajaxorg/ace/wiki/Embedding---API).
 That's it. No fuss no muss.
@@ -18,9 +17,9 @@ You can add constructor parameters the url. For example
 
 #### Constructor parameters
 
-'theme' To set the theme of the editor
+`theme` To set the theme of the editor
 
-'mode' To set the mode of the editor
+`mode` To set the mode of the editor
 
       
 ## API
@@ -30,7 +29,7 @@ to send message to the acewidget
 
 ## Events sent to the widget
 
-Try to be [jsend compatible](http://labs.omniti.com/labs/jsend/wiki)
+I tried to be [jsend compatible](http://labs.omniti.com/labs/jsend/wiki).
 
 ### userdata
 
