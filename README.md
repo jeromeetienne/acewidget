@@ -1,11 +1,16 @@
 # ace widget
 
-AceWidget is a widget iframe which make including ace in your page simple.
+AceWidget is a widget which aims to make ace trivial to embed in your page.
+
+The Vision is to be super simple to embed and have no server to setup.
+It provide the whole official [embeded api](https://github.com/ajaxorg/ace/wiki/Embedding---API).
+That's it. No fuss no muss.
+
+## How to embed it
+
+You add the following in your own page. and that it
 
     <iframe src="http://jeromeetienne.github.com/acewidget/iframe.html"></iframe>
-
-
-## url parameters
 
 You can add constructor parameters the url. For example 
 
@@ -107,11 +112,5 @@ It will returns
         }
     }
 
-## vision
-
-* be super simple to install (no server)
-  * so a iframe with an api
-* provide all API from [ace wiki](https://github.com/ajaxorg/ace/wiki/Embedding---API)
-* that's it
 
 
