@@ -1,26 +1,193 @@
-<!DOCTYPE html>
-<html>
-<head></head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="date" content="" />
+  <link rel="stylesheet" href="pandoc.css" type="text/css" />
+</head>
 <body>
-	<style>
-		iframe	{
-			float	: right;
-			margin-right	: 10%;
-		}
-		code {
-			font-weight	: bold;
-		}
-	</style>
-	<h1>AceWidget</h1>
-	a widget which make ace trivial to embed in your pages.
-	
-	<ul>
-		<li>
-			<a href="https://github.com/jeromeetienne/acewidget#readme">github</a> README contains the doc
-		</li>
-		<li>
-			<a href="demo.html">demo</a>
-		</li>
-	</ul>
+<div id="ace-widget"
+><h1
+  >ace widget</h1
+  ><p
+  >AceWidget is a widget which aims to make ace trivial to embed in your page. The Vision is to be super simple to embed and have no server to setup. It provide the whole official <a href="https://github.com/ajaxorg/ace/wiki/Embedding---API"
+    >embeded api</a
+    >. That’s it. No fuss no muss.</p
+  ><div id="how-to-embed-it"
+  ><h2
+    >How to embed it</h2
+    ><p
+    >You add the following in your own page. and that it</p
+    ><pre
+    ><code
+      >&lt;iframe src=&quot;http://jeromeetienne.github.com/acewidget/iframe.html&quot;&gt;&lt;/iframe&gt;
+</code
+      ></pre
+    ><p
+    >You can add constructor parameters the url. For example</p
+    ><pre
+    ><code
+      >http://jeromeetienne.github.com/acewidget/iframe.html?theme=twilight&amp;mode=javascript
+</code
+      ></pre
+    ><div id="constructor-parameters"
+    ><h4
+      >Constructor parameters</h4
+      ><p
+      ><code
+	>theme</code
+	> To set the theme of the editor</p
+      ><p
+      ><code
+	>mode</code
+	> To set the mode of the editor</p
+      ></div
+    ></div
+  ><div id="api"
+  ><h2
+    >API</h2
+    ><p
+    >The api calls are done via the usual <a href="https://developer.mozilla.org/en/DOM/window.postMessage"
+      >window.postMessage()</a
+      > to send message to the acewidget</p
+    ></div
+  ><div id="events-sent-to-the-widget"
+  ><h2
+    >Events sent to the widget</h2
+    ><p
+    >I tried to be <a href="http://labs.omniti.com/labs/jsend/wiki"
+      >jsend compatible</a
+      >.</p
+    ><div id="userdata"
+    ><h3
+      >userdata</h3
+      ><p
+      >It is possible to pass private data to the sent event. They will be treated as opaque data by the widget. The widget will include it in its reply. The field name is ‘userdata’</p
+      ></div
+    ><div id="settheme"
+    ><h3
+      >setTheme</h3
+      ><p
+      ><code
+	>setTheme</code
+	>: To change current theme to twilight</p
+      ><pre
+      ><code
+	>{
+    type    : &quot;setTheme&quot;,
+    data    : {
+        theme   : &quot;twilight&quot;
+    }
+}
+</code
+	></pre
+      ></div
+    ><div id="setmode"
+    ><h3
+      >setMode</h3
+      ><p
+      ><code
+	>setMode</code
+	>: To change current mode to javascript</p
+      ><pre
+      ><code
+	>{
+    type    : &quot;setMode&quot;,
+    data    : {
+        mode    : &quot;javascript&quot;
+    }
+}
+</code
+	></pre
+      ></div
+    ><div id="setvalue"
+    ><h3
+      >setValue</h3
+      ><p
+      ><code
+	>setValue</code
+	>: To change current text content</p
+      ><pre
+      ><code
+	>{
+    type    : &quot;setValue&quot;,
+    data    : {
+        text    : &quot;supernewtext&quot;
+    }
+}
+</code
+	></pre
+      ></div
+    ><div id="getvalue"
+    ><h3
+      >getValue</h3
+      ><p
+      ><code
+	>getValue</code
+	>: get the current text content</p
+      ><pre
+      ><code
+	>{
+    type    : &quot;getValue&quot;,
+    userdata: &quot;foobar&quot;
+}
+</code
+	></pre
+      ><p
+      >It will returns</p
+      ><pre
+      ><code
+	>{
+    status  : &quot;succeed&quot;,
+    data    : {
+        data    : &quot;super text content from widget&quot;,
+        userdata: &quot;foobar&quot;
+    }
+}
+</code
+	></pre
+      ></div
+    ><div id="gotoline"
+    ><h3
+      >gotoLine</h3
+      ><p
+      ><code
+	>gotoLine</code
+	>: To change the current line to 42</p
+      ><pre
+      ><code
+	>{
+    type    : &quot;setValue&quot;,
+    data    : {
+        line    : 42
+    }
+}
+</code
+	></pre
+      ></div
+    ><div id="settabsize"
+    ><h3
+      >setTabSize</h3
+      ><p
+      ><code
+	>setTabSize</code
+	>: To change the current tabsize to 8</p
+      ><pre
+      ><code
+	>{
+    type    : &quot;setTabSize&quot;,
+    data    : {
+        size    : 8
+    }
+}
+</code
+	></pre
+      ></div
+    ></div
+  ></div
+>
 </body>
 </html>
+
