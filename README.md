@@ -2,16 +2,26 @@
 
 AceWidget is a widget iframe which make including ace in your page simple.
 
-    <iframe srchttp://jeromeetienne.github.com/acewidget/"></iframe>
-   
-    http://jeromeetienne.github.com/acewidget/?theme=twilight&mode=javascript
-    
-    http://jeromeetienne.github.com/acewidget
-   
+    <iframe src="http://jeromeetienne.github.com/acewidget/iframe.html"></iframe>
+
+
+## url parameters
+
+You can add constructor parameters the url. For example 
+
+    http://jeromeetienne.github.com/acewidget/iframe.html?theme=twilight&mode=javascript
+
+#### Constructor parameters
+
+'theme' To set the theme of the editor
+
+'mode' To set the mode of the editor
+
+      
 ## API
 
-The api is done via the usual
-[window.postMessage()](https://developer.mozilla.org/en/DOM/window.postMessage).
+The api calls are done via the usual [window.postMessage()](https://developer.mozilla.org/en/DOM/window.postMessage)
+to send message to the acewidget
 
 ## Events sent to the widget
 
@@ -24,7 +34,9 @@ will be treated as opaque data by the widget. The widget will
 include it in its reply. The field name is 'userdata'
 
 ### setTheme
+
 `setTheme`: To change current theme to twilight
+
     {
         type    : "setTheme",
         data    : {
@@ -33,7 +45,9 @@ include it in its reply. The field name is 'userdata'
     }
 
 ### setMode
+
 `setMode`: To change current mode to javascript
+
     {
         type    : "setMode",
         data    : {
@@ -42,7 +56,9 @@ include it in its reply. The field name is 'userdata'
     }
 
 ### setValue
+
 `setValue`: To change current text content
+
     {
         type    : "setValue",
         data    : {
@@ -51,7 +67,9 @@ include it in its reply. The field name is 'userdata'
     }
 
 ### getValue
+
 `getValue`: get the current text content
+
     {
         type    : "getValue",
         userdata: "foobar"
@@ -68,7 +86,9 @@ It will returns
     }
 
 ### gotoLine
+
 `gotoLine`: To change the current line to 42
+
     {
         type    : "setValue",
         data    : {
@@ -77,7 +97,9 @@ It will returns
     }
 
 ### setTabSize
+
 `setTabSize`: To change the current tabsize to 8
+
     {
         type    : "setTabSize",
         data    : {
