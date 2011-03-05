@@ -5,6 +5,8 @@ The Vision is to be super simple to embed and have no server to setup.
 It provide the whole official [embeded api](https://github.com/ajaxorg/ace/wiki/Embedding---API).
 That's it. No fuss no muss.
 
+seeing is believing, here is a [demo](http://jeromeetienne.github.com/acewidget/demo.html)
+
 ## How to embed it
 
 You add the following in your own page. and that it
