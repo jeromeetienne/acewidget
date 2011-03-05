@@ -5,7 +5,7 @@ The Vision is to be super simple to embed and have no server to setup.
 It provide the whole official [embeded api](https://github.com/ajaxorg/ace/wiki/Embedding---API).
 That's it. No fuss no muss.
 
-seeing is believing, here is a [demo](http://jeromeetienne.github.com/acewidget/demo.html)
+seeing is believing, here is a [demo](http://jeromeetienne.github.com/acewidget/demo.html).
 
 ## How to embed it
 
@@ -31,7 +31,7 @@ to send message to the acewidget
 
 ## Events sent to the widget
 
-I tried to be [jsend compatible](http://labs.omniti.com/labs/jsend/wiki).
+It is [jsend compatible](http://labs.omniti.com/labs/jsend/wiki).
 
 ### userdata
 
