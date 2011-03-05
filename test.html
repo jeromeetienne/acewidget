@@ -9,6 +9,10 @@
 			var iframeWin	= document.getElementById("editor").contentWindow;
 			iframeWin.postMessage(JSON.stringify(event), "*");			
 		}
+
+		window.addEventListener("message", function(event){
+			console.log("event.data", event.data);
+		});
 		jQuery(function(){
 			editorSend({
 				type	: "setValue",
@@ -27,6 +31,10 @@
 				data	: {
 					text: "not yet implemented"
 				}
+			});
+			editorSend({
+				type	: "getValue"
+				userdata: "wow"
 			});
 		})
 	</script>	

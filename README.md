@@ -17,6 +17,12 @@ The api is done via the usual
 
 Try to be [jsend compatible](http://labs.omniti.com/labs/jsend/wiki)
 
+### userdata
+
+It is possible to pass private data to the sent event. They
+will be treated as opaque data by the widget. The widget will
+include it in its reply. The field name is 'userdata'
+
 ### setTheme
 `setTheme`: To change current theme to twilight
     {
@@ -41,6 +47,26 @@ Try to be [jsend compatible](http://labs.omniti.com/labs/jsend/wiki)
         type    : "setValue",
         data    : {
             text    : "supernewtext"
+        }
+    }
+
+### getValue
+`getValue`: get the current text content
+    {
+        type    : "setValue",
+        userdata: "foobar",
+        data    : {
+            text    : "supernewtext"
+        }
+    }
+    
+It will returns
+
+    {
+        status  : "succeed",
+        data    : {
+            data    : "super text content from widget",
+            userdata: "foobar"
         }
     }
 

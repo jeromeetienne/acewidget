@@ -19,11 +19,21 @@ var AceEditor	= function(){
 		var eventFull	= JSON.parse(event.data);
 		var eventType	= eventFull.type;
 		var eventData	= eventFull.data;
+		var userdata	= eventFull.userdata;
 		console.log("eventFull", eventFull);
 		//console.log("window message", event.data, event.origin);
 		var methodName	= "on" + eventType.substr(0,1).toUpperCase() + eventType.substr(1);
 		if( methodName in this ){
-			this[methodName](eventData);
+			var ret	= this[methodName](eventData);
+			if( ret != undefined ){
+				window.parent.postMessage(JSON.stringify({
+					status	: "succeed",
+					data	: {
+						userdata: userdata,
+						data	: ret
+					}
+				}), "*");
+			}
 		}else{
 			console.log("event ", eventType, "is unknown")
 		}
