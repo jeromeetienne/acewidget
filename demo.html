@@ -3,18 +3,54 @@
 <head></head>
 <body>
 	<style>
-		iframe	{
-			float	: right;
-			margin-right	: 10%;
+		body	{
+			background-color	: #22252a;
+			color			: #eee;
+			font-family		: times, Times New Roman, times-roman, georgia, serif;
+			max-width		: 640px;
+			margin			: auto;
+		}
+		h1 {
+			text-align	: center;
+			color		: #cd5;
+			font-size	: 4em;
+			margin-top	: 0.2em;
+			margin-bottom	: 0px;
+		}
+		h2 {
+			text-align	: center;		
+			margin-bottom	: 2em;
 		}
 		code {
 			font-weight	: bold;
 		}
+		a:hover {
+			text-decoration	: underline;			
+		}
+		a {
+			color		: lightSteelBlue;
+			font-weight	: bold;
+			text-decoration	: none;
+		}
 	</style>
-	<h1>Demo page</h1>
+	<h1>AceWidget</h1>
+	<h2>a Widget to Easily to Embed ace/bespin Editor in your Page</h2>
 	this is a demo page for <a href="index.html">acewidget</a>, a widget which make ace trivial to embed in your pages.
-	
-	<iframe id="editor" src="iframe.html?mode=javascript&theme=twilight" width="600px" height="400px"></iframe>	
+	<ul>
+		<li>
+			use <code>setValue</code> to change the test content.
+			<input type="button" value="test" onClick="doSetValue();"/>
+		</li>
+		<li>
+			use <code>setTabSize</code> to set it to 8.
+			<input type="button" value="test" onClick="doSetTabSize();"/>
+		</li>
+		<li>
+			use <code>getValue</code> to get current text content
+			<input type="button" value="test" onClick="doGetValue();"/>
+		</li>
+	</ul>
+	<iframe id="editor" src="iframe.html?mode=javascript&theme=twilight" width="100%" height="350px"></iframe>	
 	<script>
 		var editorCall	= function(event){
 			var iframeWin	= document.getElementById("editor").contentWindow;
@@ -26,7 +62,6 @@
 			JSON.stringify(event.data, function(k, v){return v;}, "\t") 
 			
 		});
-		
 		var doSetTabSize	= function(){
 			editorCall({
 				type	: "setTabSize",
@@ -51,20 +86,6 @@
 		}
 	</script>
 	
-	<ul>
-		<li>
-			use <code>setValue</code> to change the test content.
-			<input type="button" value="test" onClick="doSetValue();"/>
-		</li>
-		<li>
-			use <code>setTabSize</code> to set it to 8.
-			<input type="button" value="test" onClick="doSetTabSize();"/>
-		</li>
-		<li>
-			use <code>getValue</code> to get current text content
-			<input type="button" value="test" onClick="doGetValue();"/>
-		</li>
-	</ul>
 	<br/>
 </body>
 </html>
