@@ -11,7 +11,7 @@ That's it. No fuss no muss.
 
 show, dont tell, here is a [demo](http://jeromeetienne.github.com/acewidget/demo.html).
 
-<img src="https://github.com/jeromeetienne/acewidget/raw/master/images/demoScreenShoot.png" alt="AceWidget Demo" />
+<img style="width:100%" src="https://github.com/jeromeetienne/acewidget/raw/master/images/demoScreenShoot.png" alt="AceWidget Demo" />
 
 ## How to embed it
 
