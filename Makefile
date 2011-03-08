@@ -7,7 +7,7 @@ all:
 build: index_html_build
 
 index_html_build:
-	pandoc -s -S -c pandoc.css  README.md -o index.html
+	pandoc -s -S -c pandoc.orig.css  README.md -o index.html
 
 #################################################################################
 #		deploy								#
