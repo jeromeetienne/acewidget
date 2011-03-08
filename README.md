@@ -1,6 +1,6 @@
-# ace widget
+# AceWidget
 
-AceWidget is a widget which aims to make ace trivial to embed in your page. 
+AceWidget is a widget which make ace/besping trivial to embed in your pages. 
 The Vision is to be super simple to embed and have no server to setup.
 It provide the whole official [embeded api](https://github.com/ajaxorg/ace/wiki/Embedding---API).
 The code is available on [github](https://github.com/jeromeetienne/acewidget) under
