@@ -19,10 +19,12 @@
 		var editorCall	= function(event){
 			var iframeWin	= document.getElementById("editor").contentWindow;
 			console.log("")
-			iframeWin.postMessage(JSON.stringify(event), "*");			
+			iframeWin.postMessage(JSON.stringify(event), "*");
 		}
 		window.addEventListener("message", function(event){
-			console.log("event.data", event.data);	
+			console.log("event.data", event.data);
+			JSON.stringify(event.data, function(k, v){return v;}, "\t") 
+			
 		});
 		
 		var doSetTabSize	= function(){
@@ -46,11 +48,6 @@
 				type	: "getValue",
 				userdata: "foobar"
 			});
-		}
-		window.onload	= function(){
-			//doSetValue();
-			//doSetTabSize();
-			//doGetValue();
 		}
 	</script>
 	
