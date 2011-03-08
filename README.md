@@ -1,9 +1,13 @@
 # ace widget
 
-AceWidget is a widget which aims to make ace trivial to embed in your page.
+AceWidget is a widget which aims to make ace trivial to embed in your page. 
 The Vision is to be super simple to embed and have no server to setup.
 It provide the whole official [embeded api](https://github.com/ajaxorg/ace/wiki/Embedding---API).
+The code is available on [github](https://github.com/jeromeetienne/acewidget) under
+[MIT license](https://github.com/jeromeetienne/acewidget/blob/master/MIT-LICENSE.txt).
 That's it. No fuss no muss.
+
+## Demo
 
 show, dont tell, here is a [demo](http://jeromeetienne.github.com/acewidget/demo.html).
 
@@ -25,7 +29,7 @@ You can add constructor parameters the url. For example
 
 `mode` To set the mode of the editor
 
-      
+     
 ## API
 
 The api calls are done via the usual [window.postMessage()](https://developer.mozilla.org/en/DOM/window.postMessage)
