@@ -65,6 +65,9 @@ dt code {
 dd p {
         margin-top: 0;
 }
+img {
+	width	: 100%;	
+}
 
 #footer {
         padding-top: 1em;
