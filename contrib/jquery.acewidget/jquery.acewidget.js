@@ -61,7 +61,7 @@ microevent.mixin	= function(destObject){
 var Acewidget = function(ctorOpts, jQueryContainer) {
 	var self	= this;
 	// determine the options
-	var opts = jQuery.extend(true, {}, {
+	var opts	= jQuery.extend(true, {}, {
 		width		: "600px",
 		height		: "400px",
 		theme		: "twilight",
@@ -114,8 +114,16 @@ Acewidget.prototype._onMessage	= function(jQueryEvent){
 	// notify the callback if specified
 	if( 'userdata' in data && 'callback' in data.userdata ){
 		//console.log("notify callback to", data.userdata.callback, "with", data)
-		window[data.userdata.callback](data);
-		window[data.userdata.callback]	= undefined;
+		var callback	= window[data.userdata.callback];
+		// remove the callback from the dom
+		delete window[data.userdata.callback];
+		// remove the callback from data.userdata
+		// - thus the user get its userdata unchanged
+		delete data.userdata.callback;
+		// if data.userdata is now empty, remove it
+		if( Object.keys(data.userdata).length === 0 )		delete data.userdata;
+		// notify the caller
+		callback(data);
 	}
 }
 
@@ -129,9 +137,7 @@ Acewidget.prototype._send	= function(event, callback){
 		event.userdata	= event.userdata	|| {}
 		event.userdata.callback	= "acewidgetCall-"+Math.floor(Math.random()*99999).toString(36);
 		window[event.userdata.callback]	= function(data){
-			delete data.userdata.callback;
 			callback(data)
-			window[event.userdata.callback]	= undefined;
 		};
 	}
 	// post the message
