@@ -9,10 +9,7 @@
 	<div id="container"></div>
 
 	<script>
-	jQuery(function(){
-		var acewidget	= jQuery('#container').acewidget({
-			//width	: "300px"
-		});
+		var acewidget	= jQuery('#container').acewidget();
 
 		acewidget.bind("load", function(){
 			acewidget.setValue("not yet implemented", function(result){
