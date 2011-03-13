@@ -1,4 +1,4 @@
-# jQuery acewidget plugin
+# Ace Widget plugin for jquery
 
 jquery.acewidget.js is a jQuery plugin for [acewidget](https://github.com/jeromeetienne/acewidget).
 It makes acewidget super easy to embed in your own pages.
