@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+	<h2>playtoy during jquery.acewidget for <a href="index.html">acewidget</a></h2> 
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'></script>
+	<script src='jquery.acewidget.js'></script>
+	
+	<div id="container"></div>
+
+	<script>
+	jQuery(function(){
+		var acewidget	= jQuery('#container').acewidget({
+			//width	: "300px"
+		});
+
+		acewidget.bind("load", function(){
+			acewidget.setValue("not yet implemented", function(result){
+				console.log("setValue", result.status)
+			});
+			acewidget.getValue(function(result){
+				console.log("getValue", result.data.data)
+			});
+			acewidget.setTabSize(6, function(result){
+				console.log("setTabSize", result.status)
+			});
+		})
+	});
+	</script>
+</body>
+</html>

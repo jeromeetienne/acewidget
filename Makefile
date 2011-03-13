@@ -6,10 +6,10 @@ PROJECT_NAME=acewidget
 all:
 
 
-build: index_html_build
+build: homepage_build
 
-index_html_build:
-	pandoc -A pandoc.header.html -s README.md -o index.html
+homepage_build:
+	pandoc -A ~/.pandoc.header.html -s README.md -o index.html
 	sed -i "s/github.com\/you/github.com\/jeromeetienne\/$(PROJECT_NAME)/g" index.html
 
 #################################################################################
