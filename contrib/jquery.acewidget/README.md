@@ -18,19 +18,19 @@ To create a acewidget, do the following
 	alert("setValue "+result.status)
     })
 
-The callback is optional and notified when the action is completed.
+The callback is optional' and notified when the action is completed.
 It is [jsend compatible](http://labs.omniti.com/labs/jsend/wiki).
 
 ### to get the current text
 
     acewidget.getValue(function(result){
-	alert("getValue "+result.status+" text:"+result.data.data)
+        alert("getValue "+result.status+" text:"+result.data.data)
     })
 
 ### to set the tab size
 
     acewidget.setTabSize(8, function(result){
-	alert("setTabSize "+result.status)
+        alert("setTabSize "+result.status)
     })
 
 ### to be notified when the acewidget is loaded

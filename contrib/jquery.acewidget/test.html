@@ -12,17 +12,16 @@
 		var acewidget	= jQuery('#container').acewidget();
 
 		acewidget.bind("load", function(){
-			acewidget.setValue("not yet implemented", function(result){
+			acewidget.setValue("// example of javascript\nconsole.log('foobar');", function(result){
 				console.log("setValue", result.status)
 			});
 			acewidget.getValue(function(result){
 				console.log("getValue", result.data.data)
 			});
-			acewidget.setTabSize(6, function(result){
+			acewidget.setTabSize(8, function(result){
 				console.log("setTabSize", result.status)
 			});
-		})
-	});
+		});
 	</script>
 </body>
 </html>
