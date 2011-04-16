@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+	<h2>playtoy for jquery.acewidget.js for <a href="http://jeromeetienne.github.com/acewidget">acewidget</a></h2> 
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'></script>
+	<script src='jquery.acewidget.js'></script>
+	
+	<div id="container"></div>
+
+	<script>
+		var acewidget	= jQuery('#container').acewidget();
+
+		acewidget.bind("load", function(){
+			acewidget.setValue("// example of javascript\nconsole.log('foobar');", function(result){
+				console.log("setValue", result.status)
+			});
+			acewidget.getValue(function(result){
+				console.log("getValue", result.data.data)
+			});
+			acewidget.setTabSize(8, function(result){
+				console.log("setTabSize", result.status)
+				console.log("bla", result)
+			});
+		});
+	</script>
+</body>
+</html>
